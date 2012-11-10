@@ -1,0 +1,36 @@
+--- gai-album-0.7/Makefile.in.orig	2004-07-04 15:48:06.000000000 +0200
++++ gai-album-0.7/Makefile.in	2004-07-06 09:41:47.183004427 +0200
+@@ -7,7 +7,7 @@
+ 
+ PREFIX = @prefix@
+ GNOMEDIR = @GNOMEDIR@
+-ROXDIR = @ROX_PATH@/apps
++ROXDIR = @ROX_PATH@
+ 
+ INSTALL_PATH=$(DESTDIR)@INSTALL_PATH@
+ 
+@@ -42,15 +42,15 @@
+ 	cp -r @APPLET_IMAGES@ $(INSTALL_PATH)/share/pixmaps/@APPLET_NAME@/
+ 
+ install-rox:
+-	mkdir -p "$(ROXDIR)/@APPLET_NICE_NAME@"
+-	rm -f "$(ROXDIR)/@APPLET_NICE_NAME@/.DirIcon"
+-	ln -s $(INSTALL_PATH)/share/pixmaps/@APPLET_NAME_ICON@ "$(ROXDIR)/@APPLET_NICE_NAME@/.DirIcon"
+-	install -m 755 AppRun "$(ROXDIR)/@APPLET_NICE_NAME@"
+-	rm -f "$(ROXDIR)/@APPLET_NICE_NAME@/AppletRun"
+-	ln -s "$(ROXDIR)/@APPLET_NICE_NAME@/AppRun" "$(ROXDIR)/@APPLET_NICE_NAME@/AppletRun"
+-	rm -f "$(ROXDIR)/@APPLET_NICE_NAME@/@APPLET_NAME@"
+-	ln -s $(INSTALL_PATH)/bin/@APPLET_NAME@ "$(ROXDIR)/@APPLET_NICE_NAME@/@APPLET_NAME@"
+-	install -m 644 AppInfo.xml "$(ROXDIR)/@APPLET_NICE_NAME@"
++	mkdir -p "$(DESTDIR)$(ROXDIR)/@APPLET_NICE_NAME@"
++	rm -f "$(DESTDIR)$(ROXDIR)/@APPLET_NICE_NAME@/.DirIcon"
++	ln -s $(PREFIX)/share/pixmaps/@APPLET_NAME_ICON@ "$(DESTDIR)$(ROXDIR)/@APPLET_NICE_NAME@/.DirIcon"
++	install -m 755 AppRun "$(DESTDIR)$(ROXDIR)/@APPLET_NICE_NAME@"
++	rm -f "$(DESTDIR)$(ROXDIR)/@APPLET_NICE_NAME@/AppletRun"
++	ln -s "$(ROXDIR)/@APPLET_NICE_NAME@/AppRun" "$(DESTDIR)$(ROXDIR)/@APPLET_NICE_NAME@/AppletRun"
++	rm -f "$(DESTDIR)$(ROXDIR)/@APPLET_NICE_NAME@/@APPLET_NAME@"
++	ln -s $(PREFIX)/bin/@APPLET_NAME@ "$(DESTDIR)$(ROXDIR)/@APPLET_NICE_NAME@/@APPLET_NAME@"
++	install -m 644 AppInfo.xml "$(DESTDIR)$(ROXDIR)/@APPLET_NICE_NAME@"
+ clean:
+ 	rm -rf *.o .xvpics *~ @APPLET_NAME@
+ 
