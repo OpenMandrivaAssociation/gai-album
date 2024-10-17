@@ -7,7 +7,7 @@ Summary: Displays the front CD cover of the album played by XMMS
 Version: %{version}
 Release: %{release}
 License: GPL
-Url: http://gai.sf.net
+Url: https://gai.sf.net
 Group: Sound
 Source: http://prdownloads.sourceforge.net/gai/%{name}-%{version}.tar.bz2
 Source10:   %{name}-16.png
