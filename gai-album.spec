@@ -1,6 +1,6 @@
 %define name gai-album
 %define version 0.7
-%define release %mkrel 9
+%define release 10
 
 Name: %name
 Summary: Displays the front CD cover of the album played by XMMS
